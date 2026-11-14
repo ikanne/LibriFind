@@ -1,0 +1,166 @@
+/* =====================================================
+   LibriFind theme: "Parchment & Mahogany"
+   Burgundy, brass, walnut and cream, like an old library.
+   Change the colors in the variables below.
+   ===================================================== */
+:root{
+  --wash:rgba(243,231,208,.9);   /* tint over the bookshelf background */
+  --surface:#fbf6ea;--text:#2e1f14;--muted:#7a6450;
+  --accent:#7b2d26;--accent-text:#fff8ec;--border:#d9c6a5;--chip:#efe2c8;
+  --hero:rgba(43,28,18,.93);
+  --shadow:0 3px 12px rgba(40,25,12,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --wash:rgba(20,13,9,.92);--surface:#2a1f17;--text:#f2e6d3;--muted:#c2ab90;
+    --accent:#d9a441;--accent-text:#1e140d;--border:#4d3a2a;--chip:#3a2b20;
+    --hero:rgba(12,8,5,.8);--shadow:0 3px 12px rgba(0,0,0,.5);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --wash:rgba(20,13,9,.92);--surface:#2a1f17;--text:#f2e6d3;--muted:#c2ab90;
+  --accent:#d9a441;--accent-text:#1e140d;--border:#4d3a2a;--chip:#3a2b20;
+  --hero:rgba(12,8,5,.8);--shadow:0 3px 12px rgba(0,0,0,.5);color-scheme:dark;
+}
+
+/* ---------- Base + bookshelf background ---------- */
+*{box-sizing:border-box}
+body{
+  margin:0;color:var(--text);line-height:1.5;
+  font-family:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  background-color:#3a281c;
+  background-image:linear-gradient(var(--wash),var(--wash)),url("images/bg.jpg"),url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22320%22%20height%3D%22200%22%20viewBox%3D%220%200%20320%20200%22%3E%3Crect%20width%3D%22320%22%20height%3D%22200%22%20fill%3D%22%233a281c%22/%3E%3Crect%20x%3D%220%22%20y%3D%2278%22%20width%3D%2218%22%20height%3D%22104%22%20fill%3D%22%235a3558%22/%3E%3Crect%20x%3D%220%22%20y%3D%2288%22%20width%3D%2218%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%220%22%20y%3D%22166%22%20width%3D%2218%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%223%22%20y%3D%22108%22%20width%3D%2212%22%20height%3D%2216%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%2217%22%20y%3D%2278%22%20width%3D%221%22%20height%3D%22104%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%2218%22%20y%3D%2253%22%20width%3D%2226%22%20height%3D%22129%22%20fill%3D%22%232f5d46%22/%3E%3Crect%20x%3D%2218%22%20y%3D%2263%22%20width%3D%2226%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2218%22%20y%3D%22166%22%20width%3D%2226%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2221%22%20y%3D%2283%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%2243%22%20y%3D%2253%22%20width%3D%221%22%20height%3D%22129%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%2244%22%20y%3D%2274%22%20width%3D%2221%22%20height%3D%22108%22%20fill%3D%22%237b2d26%22/%3E%3Crect%20x%3D%2244%22%20y%3D%2284%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2244%22%20y%3D%22166%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2247%22%20y%3D%22104%22%20width%3D%2215%22%20height%3D%2222%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%2264%22%20y%3D%2274%22%20width%3D%221%22%20height%3D%22108%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%2265%22%20y%3D%2272%22%20width%3D%2214%22%20height%3D%22110%22%20fill%3D%22%232f5d46%22/%3E%3Crect%20x%3D%2265%22%20y%3D%2282%22%20width%3D%2214%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2265%22%20y%3D%22166%22%20width%3D%2214%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2278%22%20y%3D%2272%22%20width%3D%221%22%20height%3D%22110%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%2279%22%20y%3D%2260%22%20width%3D%2221%22%20height%3D%22122%22%20fill%3D%22%237b2d26%22/%3E%3Crect%20x%3D%2279%22%20y%3D%2270%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2279%22%20y%3D%22166%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%2299%22%20y%3D%2260%22%20width%3D%221%22%20height%3D%22122%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22100%22%20y%3D%2273%22%20width%3D%2214%22%20height%3D%22109%22%20fill%3D%22%238c3b4a%22/%3E%3Crect%20x%3D%22100%22%20y%3D%2283%22%20width%3D%2214%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22100%22%20y%3D%22166%22%20width%3D%2214%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22113%22%20y%3D%2273%22%20width%3D%221%22%20height%3D%22109%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22114%22%20y%3D%2250%22%20width%3D%2223%22%20height%3D%22132%22%20fill%3D%22%237b2d26%22/%3E%3Crect%20x%3D%22114%22%20y%3D%2260%22%20width%3D%2223%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22114%22%20y%3D%22166%22%20width%3D%2223%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22117%22%20y%3D%2280%22%20width%3D%2217%22%20height%3D%2222%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22136%22%20y%3D%2250%22%20width%3D%221%22%20height%3D%22132%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22137%22%20y%3D%2273%22%20width%3D%2213%22%20height%3D%22109%22%20fill%3D%22%237b2d26%22/%3E%3Crect%20x%3D%22137%22%20y%3D%2283%22%20width%3D%2213%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22137%22%20y%3D%22166%22%20width%3D%2213%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22149%22%20y%3D%2273%22%20width%3D%221%22%20height%3D%22109%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22150%22%20y%3D%2233%22%20width%3D%2221%22%20height%3D%22149%22%20fill%3D%22%232b3f5c%22/%3E%3Crect%20x%3D%22150%22%20y%3D%2243%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22150%22%20y%3D%22166%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22153%22%20y%3D%2263%22%20width%3D%2215%22%20height%3D%2216%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22170%22%20y%3D%2233%22%20width%3D%221%22%20height%3D%22149%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22171%22%20y%3D%2280%22%20width%3D%2221%22%20height%3D%22102%22%20fill%3D%22%233d4f2f%22/%3E%3Crect%20x%3D%22171%22%20y%3D%2290%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22171%22%20y%3D%22166%22%20width%3D%2221%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22174%22%20y%3D%22110%22%20width%3D%2215%22%20height%3D%2228%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22191%22%20y%3D%2280%22%20width%3D%221%22%20height%3D%22102%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22192%22%20y%3D%2281%22%20width%3D%2215%22%20height%3D%22101%22%20fill%3D%22%233d4f2f%22/%3E%3Crect%20x%3D%22192%22%20y%3D%2291%22%20width%3D%2215%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22192%22%20y%3D%22166%22%20width%3D%2215%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22206%22%20y%3D%2281%22%20width%3D%221%22%20height%3D%22101%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22207%22%20y%3D%2247%22%20width%3D%2222%22%20height%3D%22135%22%20fill%3D%22%23b88a2e%22/%3E%3Crect%20x%3D%22207%22%20y%3D%2257%22%20width%3D%2222%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22207%22%20y%3D%22166%22%20width%3D%2222%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22210%22%20y%3D%2277%22%20width%3D%2216%22%20height%3D%2228%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22228%22%20y%3D%2247%22%20width%3D%221%22%20height%3D%22135%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22229%22%20y%3D%2283%22%20width%3D%2224%22%20height%3D%2299%22%20fill%3D%22%233d4f2f%22/%3E%3Crect%20x%3D%22229%22%20y%3D%2293%22%20width%3D%2224%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22229%22%20y%3D%22166%22%20width%3D%2224%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22232%22%20y%3D%22113%22%20width%3D%2218%22%20height%3D%2216%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22252%22%20y%3D%2283%22%20width%3D%221%22%20height%3D%2299%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22253%22%20y%3D%2244%22%20width%3D%2220%22%20height%3D%22138%22%20fill%3D%22%23a4532c%22/%3E%3Crect%20x%3D%22253%22%20y%3D%2254%22%20width%3D%2220%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22253%22%20y%3D%22166%22%20width%3D%2220%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22256%22%20y%3D%2274%22%20width%3D%2214%22%20height%3D%2222%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22272%22%20y%3D%2244%22%20width%3D%221%22%20height%3D%22138%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22273%22%20y%3D%2250%22%20width%3D%2220%22%20height%3D%22132%22%20fill%3D%22%23c9b98f%22/%3E%3Crect%20x%3D%22273%22%20y%3D%2260%22%20width%3D%2220%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22273%22%20y%3D%22166%22%20width%3D%2220%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22276%22%20y%3D%2280%22%20width%3D%2214%22%20height%3D%2216%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22292%22%20y%3D%2250%22%20width%3D%221%22%20height%3D%22132%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%22293%22%20y%3D%2276%22%20width%3D%2227%22%20height%3D%22106%22%20fill%3D%22%23b88a2e%22/%3E%3Crect%20x%3D%22293%22%20y%3D%2286%22%20width%3D%2227%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22293%22%20y%3D%22166%22%20width%3D%2227%22%20height%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%22.25%22/%3E%3Crect%20x%3D%22296%22%20y%3D%22106%22%20width%3D%2221%22%20height%3D%2222%22%20fill%3D%22%23f3e6c8%22%20opacity%3D%22.85%22/%3E%3Crect%20x%3D%22319%22%20y%3D%2276%22%20width%3D%221%22%20height%3D%22106%22%20fill%3D%22%23000%22%20opacity%3D%22.3%22/%3E%3Crect%20y%3D%22182%22%20width%3D%22320%22%20height%3D%2218%22%20fill%3D%22%236b4a2f%22/%3E%3Crect%20y%3D%22182%22%20width%3D%22320%22%20height%3D%223%22%20fill%3D%22%238a6440%22/%3E%3Crect%20y%3D%22197%22%20width%3D%22320%22%20height%3D%223%22%20fill%3D%22%23000%22%20opacity%3D%22.35%22/%3E%3C/svg%3E");
+  background-size:auto,cover,320px 200px;
+  background-position:0 0,center,0 0;
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-attachment:scroll,fixed,scroll;
+}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+h1,h2,.brand span{font-family:Georgia,"Times New Roman",serif}
+
+/* ---------- Header: logo on the left + LibriFind beside it ---------- */
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  position:sticky;top:0;z-index:20;width:100%;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:8px 28px;margin:0 0 18px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:48px;width:auto;border-radius:8px;display:block}
+.brand span{font-size:1.7rem;font-weight:700;color:var(--accent);letter-spacing:.01em}
+nav{display:flex;gap:8px}
+.btn{background:var(--chip);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 14px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600}
+
+/* ---------- Hero (dark walnut panel) ---------- */
+.hero{background:var(--hero);color:#f6ead6;border:1px solid rgba(217,164,65,.4);border-radius:20px;
+  padding:36px 18px 26px;text-align:center;box-shadow:var(--shadow)}
+.eyebrow{letter-spacing:.16em;font-size:.8rem;color:#d9a441;font-weight:700}
+h1{font-size:clamp(2rem,6vw,3.1rem);margin:.3em 0 .2em;line-height:1.1;color:#fff4dd}
+.hero p{color:#d9c6a5;margin:0 auto 22px;max-width:520px}
+
+.search{display:flex;flex-wrap:wrap;gap:10px;max-width:760px;margin:0 auto;justify-content:center}
+.search input,.search select,.search .btn{height:46px}
+.search input,.search select{border-radius:999px;border:1px solid #d9c6a5;background-color:#fbf6ea;color:#2e1f14;font:inherit;padding:0 18px}
+.search input{flex:2 1 220px;min-width:0}
+.search select{
+  flex:1 1 190px;min-width:170px;cursor:pointer;
+  -webkit-appearance:none;appearance:none;padding-right:42px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237b2d26' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;
+}
+.search input:focus,.search select:focus{outline:2px solid #d9a441}
+.search .btn.primary{background:#d9a441;color:#2b1c12;border-color:#d9a441;font-weight:700;padding:0 26px}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 4px}
+.chip{background:var(--chip);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:.9rem}
+.hero .chip{background:rgba(255,248,236,.1);color:#f6ead6;border-color:rgba(246,234,214,.3)}
+.chip[aria-pressed="true"],.hero .chip[aria-pressed="true"]{background:#d9a441;color:#2b1c12;border-color:#d9a441;font-weight:600}
+
+/* ---------- Results heading ---------- */
+.section-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:44px 0 20px;box-shadow:var(--shadow)}
+.section-head h2{margin:0}
+.count{color:var(--muted);font-size:.9rem}
+
+/* ---------- Library cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-bottom:30px}
+.card{background:var(--surface);border:1px solid var(--border);border-left:6px solid var(--accent);
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.thumb{height:170px;position:relative;display:flex;align-items:center;justify-content:center;font-size:3rem;
+  background:linear-gradient(135deg,hsl(var(--h) 55% 80%),hsl(calc(var(--h) + 40) 45% 68%))}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fav{position:absolute;top:10px;right:10px;z-index:2;background:var(--surface);border:1px solid var(--border);
+  border-radius:50%;width:38px;height:38px;font-size:1.1rem;line-height:1}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.body h3{margin:0;font-size:1.12rem;font-family:Georgia,"Times New Roman",serif}
+.meta{color:var(--muted);font-size:.88rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0 8px}
+.tag{background:var(--chip);border-radius:8px;padding:2px 8px;font-size:.78rem}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 16px;
+  background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.details-btn{align-self:flex-start;margin-top:auto;font-size:.88rem;padding:6px 12px}
+
+/* ---------- Full details ---------- */
+.modal-info h4{margin:14px 0 6px;font-family:Georgia,"Times New Roman",serif;color:var(--accent);font-size:1rem}
+.info{display:grid;grid-template-columns:96px 1fr;gap:6px 10px;margin:0}
+.info dt{color:var(--muted);font-weight:600}
+.info dd{margin:0}
+.facil{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.facil li{display:flex;justify-content:space-between;gap:10px;background:var(--chip);border-radius:8px;padding:5px 10px}
+.facil li.no{opacity:.65}
+.facil b{font-weight:600;text-align:right}
+.modal-info p{margin:4px 0}
+
+footer{width:100%;margin:0;padding:16px 28px;text-align:center;background:var(--surface);border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+
+@media (max-width:520px){.brand span{font-size:1.35rem}.brand img{height:40px}}
+
+/* ---------- Laptop screens ---------- */
+@media (min-width:1000px){
+  .hero{padding:40px 48px 30px}
+  .hero p{max-width:640px}
+  .search{max-width:880px}
+}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* ---------- Details pop-up ---------- */
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
+  padding:20px;background:rgba(15,9,5,.72)}
+.modal[hidden]{display:none}
+.modal-panel{position:relative;width:100%;max-width:940px;max-height:88vh;overflow:auto;
+  background:var(--surface);color:var(--text);border:1px solid var(--border);border-left:6px solid var(--accent);
+  border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.55);animation:pop .18s ease-out}
+@keyframes pop{from{transform:scale(.95);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.modal-panel{animation:none}}
+.modal-close{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;
+  background:var(--surface);color:var(--text);border:1px solid var(--border);font-size:1rem;line-height:1}
+.modal-close:hover{border-color:var(--accent)}
+.modal-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+.modal-photo{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;font-size:4rem;
+  background:linear-gradient(135deg,hsl(var(--h) 55% 80%),hsl(calc(var(--h) + 40) 45% 68%))}
+.modal-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.modal-info{padding:26px 28px;font-size:.93rem}
+.modal-info h3{margin:0 0 2px;font-family:Georgia,"Times New Roman",serif;font-size:1.5rem;padding-right:34px}
+.modal-info .info{margin-top:12px}
+.modal-fav{margin-top:14px}
+@media (max-width:760px){.modal-grid{grid-template-columns:1fr}.modal-photo{min-height:190px}}
+
+/* ---------- Header links + About ---------- */
+.links{display:flex;gap:26px}
+.links a{color:var(--text);text-decoration:none;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent}
+.links a:hover,.links a[aria-current]{color:var(--accent);border-bottom-color:#d9a441}
+.actions{display:flex;gap:8px}
+.section-head,.about{width:100%;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 28px;margin:0;box-shadow:var(--shadow)}
+.about{width:100%;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 28px;margin:0;box-shadow:var(--shadow)}
+.about h2{margin:0 0 6px}
+.about p{margin:0;color:var(--muted)}
+@media (max-width:760px){.links{display:none}}
+
+/* ---------- Spacing between hero, Explore bar and cards ---------- */
+.hero{margin-bottom:48px}
+.section-head{margin:0 0 28px}
+.grid{row-gap:28px;column-gap:24px}
