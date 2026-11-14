@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LibriFind — Free Library Finder</title>
-  <link rel="icon" href="images/LibriFind.jpg">
+  <link rel="icon" href="LibriFind.jpg">
   <link rel="stylesheet" href="style.css">
   <script>
     /* If a picture is not found, try other likely places/spellings (GitHub is case-sensitive). */
     function imgFallback(img) {
       var f = img.dataset.file, names = [f, f.toLowerCase(), f.replace(/\.jpg$/i, ".JPG"), f.replace(/\.jpg$/i, ".jpeg"), f.replace(/\.jpg$/i, ".png")];
       var list = [];
-      ["images/", "", "Images/"].forEach(function (d) {
+      ["", "images/", "Images/"].forEach(function (d) {
         names.forEach(function (n) { if (list.indexOf(d + n) < 0) list.push(d + n); });
       });
       var i = (+img.dataset.i || 0) + 1;
@@ -22,7 +22,7 @@
 <body>
   <header class="site-header">
       <a class="brand" href="index.html">
-        <img src="images/LibriFind.jpg" data-file="LibriFind.jpg" alt="LibriFind logo" onerror="imgFallback(this)">
+        <img src="LibriFind.jpg" data-file="LibriFind.jpg" alt="LibriFind logo" onerror="imgFallback(this)">
         <span>LibriFind</span>
       </a>
       <nav class="links" aria-label="Main">
