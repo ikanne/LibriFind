@@ -92,7 +92,7 @@ function facilityRow(l, [name, icon]) {
 
 function photoHTML(l) {
   return `<span aria-hidden="true">${l.emoji}</span>
-    <img src="${esc(l.image || "library.jpg")}" alt="${esc(l.name)}" loading="lazy" onerror="this.remove()">`;
+    <img src="images/${esc(l.image || "library.jpg")}" alt="${esc(l.name)}" loading="lazy" onerror="this.remove()">`;
 }
 
 function wifiText(l) {

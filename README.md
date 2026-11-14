@@ -20,9 +20,10 @@ librifind/
 ├── style.css    ← styling, dark mode, responsive grid
 ├── data.js      ← YOUR LIBRARY LIST (edit this one)
 ├── script.js    ← search, location, filters, favorites
-├── LibriFind.jpg   ← logo
-├── library.jpg     ← photo used on every card
-├── bg.jpg          ← page background
+├── images/
+│   ├── LibriFind.jpg   ← logo
+│   ├── library.jpg     ← photo used on every card
+│   └── bg.jpg          ← page background
 └── README.md
 ```
 
@@ -82,6 +83,6 @@ Add a map API (e.g. Leaflet) once you’re comfortable with JavaScript.
 
 ## Library photo
 
-All library cards use one photo: `library.jpg`.
+All library cards use one photo: `images/library.jpg`.
 If the photo is missing, the card shows a colored emoji cover instead.
 To give one library its own photo, add `image: "name.jpg"` to that library in `data.js`.
