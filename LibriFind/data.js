@@ -2,7 +2,7 @@
    LIBRARY DATA — edit this file to add or change libraries.
 
    LOCATIONS  → the choices in the location dropdown.
-                All cards use one photo: images/library.jpg
+                All cards use one photo: library.jpg
                 (to give one library its own photo, add image: "name.jpg").
    LIBRARIES  → one block per library. Copy a block, add a comma,
                 and change the values. Give each a unique id.
